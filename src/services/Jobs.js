@@ -7,6 +7,13 @@ class Jobs extends BaseService {
     return RequestHelper.get(this, `projects/${pId}/jobs`, options);
   }
 
+  show(projectId, jobId) {
+    const pId = encodeURIComponent(projectId);
+
+    return RequestHelper.get(this, `projects/${pId}/jobs/${jobId}`);
+  }
+
+
   play(projectId, jobId) {
     const pId = encodeURIComponent(projectId);
 
